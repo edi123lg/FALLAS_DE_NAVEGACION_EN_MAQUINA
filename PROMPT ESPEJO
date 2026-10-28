@@ -1,0 +1,202 @@
+# Revisión del repositorio — PROMPT ESPEJO
+
+**Repositorio:** [FALLAS_DE_NAVEGACION_EN_MAQUINA](https://github.com/edi123lg/FALLAS_DE_NAVEGACION_EN_MAQUINA)
+
+**Fecha de revisión:** 28 de octubre de 2026
+
+## 1. Comprensión del repositorio
+
+El repositorio documenta la resolución del incidente INC-02, relacionado con la imposibilidad de navegar por Internet desde una máquina virtual con Windows.
+
+El diagnóstico identificó una configuración incorrecta de los servidores DNS. La máquina podía establecer conectividad con una dirección IP pública mediante el comando `ping 8.8.8.8`, pero no podía navegar correctamente por nombres de dominio.
+
+La solución consistió en configurar TCP/IPv4 para obtener automáticamente la dirección IP y los servidores DNS mediante DHCP. Después del cambio, se verificó la recuperación de la navegación web.
+
+Actualmente, el repositorio contiene:
+
+- `README.md`: descripción del incidente, diagnóstico, solución y conclusiones.
+- `EQUIPO`: integrantes y responsabilidades.
+- `GUIA_ACTIVIDAD/MESA DE SERVICIO DE TI_Incidente02.docx`: guía de la actividad.
+- `Documentacion/_EQUIPO PROFESIONAL DE TI.pdf`: informe con evidencias, diagnóstico y conclusiones.
+
+La documentación permite comprender el problema y la solución aplicada. Sin embargo, todavía es necesario comprobar que todos los enlaces y las referencias entre los documentos coincidan con la estructura actual y que el informe refleje el estado final del trabajo.
+
+## 2. Fortalezas verificadas
+
+### 2.1. Documentación del incidente
+
+El README explica el propósito del repositorio, el síntoma inicial, las pruebas realizadas, la causa identificada, la solución aplicada y el resultado obtenido.
+
+Esto permite que una persona ajena al equipo comprenda el propósito del trabajo sin depender exclusivamente de explicaciones verbales.
+
+### 2.2. Secuencia lógica de diagnóstico
+
+La documentación relaciona los siguientes elementos:
+
+1. Falla inicial de navegación.
+2. Prueba de conectividad mediante `ping 8.8.8.8`.
+3. Inspección de las propiedades TCP/IPv4.
+4. Identificación de la configuración DNS incorrecta.
+5. Corrección mediante asignación automática.
+6. Validación de la navegación web.
+
+Esta secuencia facilita comprender cómo se llegó a la solución.
+
+### 2.3. Evidencias visuales
+
+El informe contiene capturas del estado inicial, los resultados del comando ping, las propiedades de red, la configuración aplicada y la recuperación de la navegación.
+
+Estas evidencias respaldan los principales pasos documentados del diagnóstico y la solución.
+
+### 2.4. Responsabilidades identificadas
+
+El archivo `EQUIPO` identifica a los responsables de la coordinación, operación técnica, análisis, documentación y continuidad.
+
+Esto facilita reconocer la distribución de funciones dentro del equipo.
+
+### 2.5. Historial de modificaciones
+
+El historial de GitHub permite consultar cambios efectuados en el repositorio, incluidos el traslado del informe PDF a la carpeta `Documentacion` y la actualización del README.
+
+El historial aporta trazabilidad de las modificaciones, aunque no demuestra por sí solo todas las actividades técnicas realizadas durante el incidente.
+
+## 3. Oportunidades de mejora
+
+### 3.1. Importante: corregir la estructura y los enlaces del README
+
+**Archivo afectado:** `README.md`.
+
+**Hallazgo observado:** el árbol de carpetas y el enlace al informe PDF deben coincidir con la ubicación actual del archivo, que es `Documentacion/_EQUIPO PROFESIONAL DE TI.pdf`.
+
+**Impacto:** una referencia desactualizada puede dificultar la navegación por el repositorio e impedir que el lector encuentre el informe.
+
+**Mejora propuesta:**
+
+- Actualizar el árbol de carpetas del README.
+- Corregir el enlace al informe PDF.
+- Revisar que los enlaces a los demás documentos funcionen.
+
+**Verificación:** abrir el README desde GitHub y comprobar que cada enlace conduce al archivo correcto.
+
+### 3.2. Importante: mantener coherencia entre el README y el informe final
+
+**Archivos afectados:** `README.md` y `Documentacion/_EQUIPO PROFESIONAL DE TI.pdf`.
+
+**Hallazgo observado:** el README indica que el incidente está resuelto, mientras que el informe PDF todavía enumera tareas pendientes relacionadas con la revisión del script de Python, la evaluación de restricciones de permisos y el cierre formal del ticket INC-02.
+
+El equipo ha indicado que el trabajo está terminado, por lo que corresponde verificar y actualizar el estado de esas actividades en la documentación.
+
+**Impacto:** la existencia de tareas pendientes en el informe puede generar dudas sobre el cierre real del incidente.
+
+**Mejora propuesta:**
+
+- Revisar cada tarea que aparece como pendiente.
+- Documentar el resultado real de cada actividad.
+- Actualizar el estado del ticket de acuerdo con lo que efectivamente se realizó.
+- Conservar las evidencias correspondientes cuando existan.
+
+**Verificación:** comprobar que el README y el informe presenten el mismo estado final y que las conclusiones estén respaldadas por las actividades documentadas.
+
+### 3.3. Recomendable: precisar la identificación de la causa raíz
+
+**Archivo afectado:** `Documentacion/_EQUIPO PROFESIONAL DE TI.pdf`.
+
+**Hallazgo observado:** el informe identifica la configuración DNS incorrecta como causa del problema de navegación. También relaciona la modificación de la configuración con un script ejecutado anteriormente, pero incluye la revisión de ese script entre las tareas pendientes.
+
+**Impacto:** identificar la configuración que provocó la falla no demuestra automáticamente qué instrucción originó dicha configuración.
+
+**Mejora propuesta:**
+
+- Documentar la revisión del script si se realizó.
+- Identificar la instrucción responsable únicamente si existe evidencia.
+- Si no se confirmó el origen, registrarlo como una hipótesis pendiente de comprobación.
+
+**Verificación:** comprobar que el informe diferencie entre la causa técnica identificada y el posible origen de la configuración incorrecta.
+
+### 3.4. Recomendable: revisar la información incluida en las capturas
+
+**Archivo afectado:** informe PDF y capturas de las propiedades de red.
+
+**Hallazgo observado:** las capturas muestran direcciones IP privadas y una dirección MAC del adaptador.
+
+**Impacto:** algunos identificadores pueden no ser necesarios para demostrar el problema y podrían revelar detalles internos del entorno de trabajo.
+
+**Mejora propuesta:**
+
+- Evaluar qué información es necesaria para justificar el diagnóstico.
+- Ocultar en la versión pública los identificadores que no aporten valor.
+- Conservar las evidencias originales de forma segura.
+
+**Verificación:** revisar la versión publicada y comprobar que las capturas contienen la información necesaria sin exponer datos innecesarios.
+
+### 3.5. Precisión técnica de las conclusiones
+
+**Hallazgo observado:** el resultado satisfactorio de `ping 8.8.8.8` demuestra conectividad IP hacia esa dirección pública en el momento de la prueba.
+
+**Consideración técnica:** este resultado ayuda a orientar el diagnóstico hacia DNS, pero por sí solo no descarta todas las posibles fallas del hipervisor, el adaptador virtual o la puerta de enlace.
+
+**Mejora propuesta:** evitar afirmaciones absolutas sobre causas descartadas cuando las pruebas no las hayan examinado de manera suficiente.
+
+**Verificación:** comprobar que cada conclusión técnica esté respaldada por pruebas específicas y que las limitaciones del diagnóstico estén expresadas con precisión.
+
+## 4. Preguntas espejo
+
+Antes de considerar la documentación completamente cerrada, conviene verificar las siguientes cuestiones:
+
+1. ¿El README permite localizar todos los documentos principales mediante enlaces funcionales?
+2. ¿Cada prueba realizada está relacionada con un resultado observado y una conclusión?
+3. ¿Se confirmó qué instrucción del script originó la configuración de red o solo se identificó la configuración DNS incorrecta?
+4. ¿Las tareas pendientes del informe fueron completadas y documentadas?
+5. ¿El estado final del incidente coincide en todos los documentos?
+6. ¿Otro técnico podría repetir las comprobaciones y comprender la solución sin consultar al equipo original?
+7. ¿Las capturas públicas contienen únicamente la información necesaria para documentar el incidente?
+
+Estas preguntas sirven para validar la calidad del trabajo y no representan afirmaciones de que las actividades correspondientes estén incompletas.
+
+## 5. Tres acciones prioritarias
+
+### Prioridad 1. Corregir los enlaces y la estructura del README
+
+**Qué cambiar:** actualizar el árbol de carpetas y el enlace al informe PDF según su ubicación actual.
+
+**Por qué es importante:** facilita la navegación y evita referencias rotas.
+
+**Archivo:** `README.md`.
+
+**Cómo verificarlo:** abrir los enlaces desde GitHub y comprobar que todos conducen a los documentos correctos.
+
+### Prioridad 2. Sincronizar el estado final de la documentación
+
+**Qué cambiar:** verificar y actualizar las tareas pendientes del informe, documentando los resultados reales y el cierre del ticket cuando corresponda.
+
+**Por qué es importante:** garantiza que el repositorio refleje el estado final del incidente sin contradicciones.
+
+**Archivos:** `Documentacion/_EQUIPO PROFESIONAL DE TI.pdf` y `README.md`.
+
+**Cómo verificarlo:** comparar el estado, las conclusiones y las tareas finales de ambos documentos.
+
+### Prioridad 3. Fortalecer la precisión técnica y las evidencias
+
+**Qué cambiar:** precisar las conclusiones relacionadas con la conectividad y DNS, documentar el origen del problema si se confirmó y revisar los identificadores presentes en las capturas.
+
+**Por qué es importante:** mejora la reproducibilidad, la confiabilidad de las conclusiones y la protección de la información publicada.
+
+**Archivo:** informe PDF.
+
+**Cómo verificarlo:** comprobar que las afirmaciones técnicas estén respaldadas por pruebas y que las capturas públicas no expongan información innecesaria.
+
+## 6. Siguiente paso
+
+La primera acción recomendada es corregir los enlaces y el árbol de carpetas del README, porque se trata de una mejora concreta y directamente verificable.
+
+Después, conviene revisar el estado final de las tareas documentadas en el informe y precisar las conclusiones técnicas cuando sea necesario.
+
+No se considera implementada ninguna mejora hasta comprobar el resultado después de aplicar los cambios.
+
+## Conclusión general
+
+El repositorio dispone de una base documental útil: presenta el incidente, describe una secuencia lógica de diagnóstico, contiene evidencias visuales e identifica a los responsables del trabajo.
+
+Las principales oportunidades de mejora se concentran en la coherencia entre documentos, la exactitud de los enlaces, la trazabilidad del estado final y la precisión de algunas conclusiones técnicas.
+
+El objetivo de la revisión es que el repositorio sea claro, seguro y reproducible, y que un técnico pueda comprender el incidente y continuar el trabajo sin depender de explicaciones verbales del equipo original.
